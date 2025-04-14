@@ -1,4 +1,4 @@
-#Projeto Ionic5 Udemy
+# Projeto Ionic5 Udemy
 
 Repositório criado durante um curso prático na Udemy, focado no desenvolvimento mobile com Ionic 5, Angular, TypeScript, Node.js e MySQL.
 
