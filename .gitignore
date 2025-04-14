@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+npm-debug.log*
+.env
+
+# Ionic / Angular
+www/
+platforms/
+plugins/
+dist/
+build/
+coverage/
+.idea/
+.vscode/
+
+# Logs e temporários
+*.log
+.DS_Store
+Thumbs.db
