@@ -1,9 +1,10 @@
+import "reflect-metadata";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { Request, Response } from "express";
-import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
 import config from "./configuration/config";
+import { AppDataSource } from "./data-source";
 
 // create express app
 const app = express();

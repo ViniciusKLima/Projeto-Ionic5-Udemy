@@ -1,4 +1,4 @@
-export abstract class BaseNOtification {
+export abstract class BaseNotification {
   notificacions: Array<{ message: string }>;
 
   constructor() {

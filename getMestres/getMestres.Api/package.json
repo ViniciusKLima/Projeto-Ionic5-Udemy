@@ -6,17 +6,20 @@
    "devDependencies": {
       "@types/node": "^22.13.10",
       "ts-node": "^10.9.2",
-      "typescript": "^5.8.2"
+      "typescript": "^5.8.3"
    },
    "dependencies": {
-      "reflect-metadata": "^0.2.2",
-      "typeorm": "0.3.22",
-      "mysql2": "^3.14.0",
+      "body-parser": "^1.20.3",
       "express": "^4.21.2",
-      "body-parser": "^1.20.3"
+      "mysql2": "^3.14.0",
+      "reflect-metadata": "^0.2.2",
+      "typeorm": "0.3.22"
+      
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "server": "nodemon --watch \"src/**/*.ts\" --exec ts-node src/index.ts --delay 1500ms"
+
    }
 }

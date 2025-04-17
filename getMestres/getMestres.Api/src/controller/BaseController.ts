@@ -1,8 +1,8 @@
-import { Request, Response, NextFuction } from "express";
-import { getRepository, Repository } from "typeorm";
-import { BaseNOtification } from "../entity/BaseNotification";
+import { Request } from "express";
+import { Repository, getRepository } from "typeorm";
+import { BaseNotification } from "../entity/BaseNotification";
 
-export abstract class BaseController<T> extends BaseNOtification {
+export abstract class BaseController<T> extends BaseNotification {
   private _repository: Repository<T>;
 
   constructor(entity: any) {
@@ -25,6 +25,7 @@ export abstract class BaseController<T> extends BaseNOtification {
         Object.assign(_modelInDB, model);
       }
     }
+
     if (this.valid()) return this._repository.save(model);
     else
       return {
@@ -36,10 +37,9 @@ export abstract class BaseController<T> extends BaseNOtification {
   async remove(request: Request) {
     let uid = request.params.id;
     let model: any = await this._repository.find(uid);
-    if(model) {
+    if (model) {
       model.deleted = true;
     }
-
-    return await this._repository.save(model);
+    return this._repository.save(model);
   }
 }
