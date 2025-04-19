@@ -1,4 +1,5 @@
 export abstract class BaseNotification {
+
   notifications: Array<{ message: string }>;
 
   constructor() {
@@ -10,7 +11,8 @@ export abstract class BaseNotification {
   }
 
   isTrue(value, message) {
-    if (value) this.notifications.push({ message: message });
+    if (value)
+      this.notifications.push({ message: message });
   }
 
   isRequired(value, message) {
@@ -29,12 +31,14 @@ export abstract class BaseNotification {
   }
 
   isFixedLen(value, len, message) {
-    if (value.length != len) this.notifications.push({ message: message });
+    if (value.length != len)
+      this.notifications.push({ message: message });
   }
 
   isEmail(value, message) {
     var reg = new RegExp(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/);
-    if (!reg.test(value)) this.notifications.push({ message: message });
+    if (!reg.test(value))
+      this.notifications.push({ message: message });
   }
 
   get allNotifications(): Array<{ message: string }> {
@@ -44,4 +48,5 @@ export abstract class BaseNotification {
   valid(): boolean {
     return this.notifications.length == 0;
   }
+
 }
